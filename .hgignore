@@ -1,3 +1,33 @@
 
 syntax: regexp
 ^\.project$
+syntax: regexp
+\.aux$
+syntax: regexp
+\.acn$
+syntax: regexp
+\.bbl$
+syntax: regexp
+\.blg$
+syntax: regexp
+\.brf$
+syntax: regexp
+\.glo$
+syntax: regexp
+\.idx$
+syntax: regexp
+\.ist$
+syntax: regexp
+\.lof$
+syntax: regexp
+\.lol$
+syntax: regexp
+\.lot$
+syntax: regexp
+\.out$
+syntax: regexp
+\.synctex$
+syntax: regexp
+\.toc$
+syntax: regexp
+\.tps$
