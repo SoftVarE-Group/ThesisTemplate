@@ -1,8 +1,11 @@
 % surrounding TODOs with this command, gives you the ability to remove all if necessary
-\newcommand{\todo}[1]{{\color{comment}\textit{[#1]}}}
-%\newcommand{\todo}[1]{{\color[rgb]{0.5,0,0}\textit{\ [#1]}}}
-%\newcommand{\todo}[1]{}
-\newcommand{\todots}{\todo{\ldots}}
+\iffinal{
+	\newcommand{\todo}[1]{}
+	\newcommand{\todots}{}
+}{
+	\newcommand{\todo}[1]{{\color{comment}\textit{[#1]}}}
+	\newcommand{\todots}{\todo{\ldots}}
+}
 
 % propositional formulas
 \newcommand{\pand}{\wedge}
@@ -18,14 +21,6 @@
 \newtheorem{definition}{Definition}[chapter]
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{lemma}{Lemma}[chapter]
-
-% \autoref always with capital letters and changed labels
-%\renewcommand{\chapterautorefname}{Chapter}
-%\renewcommand{\sectionautorefname}{Section}
-%\renewcommand{\subsectionautorefname}{Section}
-%\renewcommand{\subsubsectionautorefname}{Section}
-%\renewcommand{\pageautorefname}{Page}
-%\newcommand{\lstnumberautorefname}{Line}
 
 % print URLs not in Typewriter Font
 \def\UrlFont{\rm}

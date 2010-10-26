@@ -1,6 +1,9 @@
 \documentclass[
-  %draft % omit title page, listings, and particular chapters selected below using include only
-]{tex/ttdoc}
+  %draft,    % omit title page, listings, and particular chapters selected below using include only
+	%german,   % titles for a thesis in German, A4 paper
+	%print,    % the printed version does not use colored links
+	%final,    % removes all TODOs
+]{tex/ttthesis}
 
 \input{tex/colorscheme}
 \input{tex/lststyles}
@@ -10,21 +13,38 @@
 %*********************************************************************%
 % META                                                                %
 %*********************************************************************%
-
-\newcommand{\university}{University of Magdeburg}
-\newcommand{\school}{School of Computer Science}
+\ifgerman{
+  \newcommand{\university}{Otto-von-Guericke-Universität Magdeburg}
+  \newcommand{\school}{Fakultät für Informatik}
+}{
+  \newcommand{\university}{University of Magdeburg}
+  \newcommand{\school}{School of Computer Science}
+}
+\newcommand{\logo}{\includegraphics[trim=0mm 0mm 50mm 0mm,clip,height=3cm]{INF_SIGN_druck}}
 
 \newcommand{\advisorone}{Prof.\ \todo{Name}}
-\newcommand{\departmentone}{Department of \todots}
+\newcommand{\departmentone}{\ifgerman{Institut für}{Department of}\todots}
 
 \newcommand{\advisortwo}{}
 \newcommand{\departmenttwo}{}
 
-\newcommand{\thesiskind}{Master Thesis} % Master Thesis/Bachelor Thesis/Diplomarbeit (do not translate Diplomarbeit into English)
-\newcommand{\theforename}{\todo{Forename}}
-\newcommand{\thesurname}{\todo{Surname}}
-\newcommand{\thetitle}{\todo{The Title of the Thesis}}
-\newcommand{\thedate}{\todo{Month 01}}
+% Thesis kind
+\ifgerman{\newcommand{\thesiskind}{Masterarbeit}}{\newcommand{\thesiskind}{Master Thesis}}
+%\ifgerman{\newcommand{\thesiskind}{Bachelorarbeit}}{\newcommand{\thesiskind}{Bachelor Thesis}}
+%\newcommand{\thesiskind}{Diplomarbeit} %do not translate
+%\ifgerman{\newcommand{\thesiskind}{Doktorarbeit}}{\newcommand{\thesiskind}{Dissertation}}
+
+\ifgerman{
+	\newcommand{\theforename}{\todo{Vorname}}
+	\newcommand{\thesurname}{\todo{Nachname}}
+	\newcommand{\thetitle}{\todo{Titel der Arbeit}}
+	\newcommand{\thedate}{\todo{13. Monat}}
+}{
+	\newcommand{\theforename}{\todo{Forename}}
+	\newcommand{\thesurname}{\todo{Surname}}
+	\newcommand{\thetitle}{\todo{The Title of the Thesis}}
+	\newcommand{\thedate}{\todo{Month 13}}
+}
 \newcommand{\theyear}{\todo{2010}}
 
 %*********************************************************************%
@@ -79,18 +99,33 @@
 	{\parskip 0pt\tableofcontents} % toc bitte einzeilig
 	\blankpage
 
-	\listoffigures
-	\addcontentsline{toc}{chapter}{List of Figures}
+	\ifgerman{
+		\listoffigures
+		\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
 
-	\listoftables
-	\addcontentsline{toc}{chapter}{List of Tables}
+		\listoftables
+		\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
 
-	\renewcommand{\lstlistlistingname}{List of Code Listings}
-	\lstlistoflistings
-	\addcontentsline{toc}{chapter}{List of Code Listings}
+		\renewcommand{\lstlistlistingname}{Quelltextverzeichnis}
+		\lstlistoflistings
+		\addcontentsline{toc}{chapter}{Quelltextverzeichnis}
 
-	\renewcommand*{\firstacronymfont}[1]{\emph{#1}}
-	\printglossary[type=acronym,title=List of Acronyms,toctitle=List of Acronyms]
+		\renewcommand*{\firstacronymfont}[1]{\emph{#1}}
+		\printglossary[type=acronym,title=List of Acronyms,toctitle=Abkürzungsverzeichnis]
+	}{
+		\listoffigures
+		\addcontentsline{toc}{chapter}{List of Figures}
+
+		\listoftables
+		\addcontentsline{toc}{chapter}{List of Tables}
+
+		\renewcommand{\lstlistlistingname}{List of Code Listings}
+		\lstlistoflistings
+		\addcontentsline{toc}{chapter}{List of Code Listings}
+
+		\renewcommand*{\firstacronymfont}[1]{\emph{#1}}
+		\printglossary[type=acronym,title=List of Acronyms,toctitle=List of Acronyms]
+	}
 }
 
 %*********************************************************************%
