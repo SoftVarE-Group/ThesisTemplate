@@ -1,0 +1,142 @@
+\documentclass[
+  %draft % omit title page, listings, and particular chapters selected below using include only
+]{tex/scidoc}
+
+\input{tex/colorscheme}
+\input{tex/lststyles}
+\input{tex/tikzstyles}
+\input{tex/macros}
+
+%*********************************************************************%
+% META                                                                %
+%*********************************************************************%
+
+\newcommand{\university}{University of Magdeburg}
+\newcommand{\school}{School of Computer Science}
+
+\newcommand{\advisorone}{Prof.\ \todo{Name}}
+\newcommand{\departmentone}{Department of \todots}
+
+\newcommand{\advisortwo}{}
+\newcommand{\departmenttwo}{}
+
+\newcommand{\thesiskind}{Master Thesis} % Master Thesis/Bachelor Thesis/Diplomarbeit (do not translate Diplomarbeit into English)
+\newcommand{\theforename}{\todo{Forename}}
+\newcommand{\thesurname}{\todo{Surname}}
+\newcommand{\thetitle}{\todo{The Title of the Thesis}}
+\newcommand{\thedate}{\todo{Month 01}}
+\newcommand{\theyear}{\todo{2010}}
+
+%*********************************************************************%
+% SETUP                                                               %
+%*********************************************************************%
+
+% meta informations of the document
+\hypersetup{
+ pdfauthor={\theforename\ \thesurname},
+ pdftitle={\thetitle}
+}
+
+% open index file
+\ifnotdraft{\makeindex}
+
+%*********************************************************************%
+% THE DOCUMENT                                                        %
+%*********************************************************************%
+
+\begin{document}
+
+% set the path where graphics are located
+\graphicspath{{pics/}}
+
+\ifnotdraft{
+	\frontmatter
+	\pagenumbering{roman}
+	\include{tex/titlepage}
+
+	\include{chapters/abstract}
+	\blankpage
+
+	%\chapter*{Acknowledgements}
+	%\ldots
+	%\blankpage
+}
+
+%*********************************************************************%
+% ACRONYMS                                                            %
+%*********************************************************************%
+
+% HOWTO: \gls{IDE} for singular or \glspl{IDE} for plural with 's
+\makeglossaries
+\newacronym{IDE}{IDE}{Integrated Development Environment}
+%\glsaddall % use only if you have acronyms that occur only in graphics
+
+%*********************************************************************%
+% LISTINGS                                                            %
+%*********************************************************************%
+
+\ifnotdraft{
+	{\parskip 0pt\tableofcontents} % toc bitte einzeilig
+	\blankpage
+
+	\listoffigures
+	\addcontentsline{toc}{chapter}{List of Figures}
+
+	\listoftables
+	\addcontentsline{toc}{chapter}{List of Tables}
+
+	\renewcommand{\lstlistlistingname}{List of Code Listings}
+	\lstlistoflistings
+	\addcontentsline{toc}{chapter}{List of Code Listings}
+
+	\renewcommand*{\firstacronymfont}[1]{\emph{#1}}
+	\printglossary[type=acronym,title=List of Acronyms,toctitle=List of Acronyms]
+}
+
+%*********************************************************************%
+% CHAPTERS                                                            %
+%*********************************************************************%
+
+\mainmatter
+\pagenumbering{arabic}
+
+\include{chapters/introduction}
+\include{chapters/background}
+\include{chapters/example}
+\include{chapters/evaluation}
+\include{chapters/relatedwork}
+\include{chapters/conclusion}
+\include{chapters/futurework}
+
+%*********************************************************************%
+% APPENDIX                                                            %
+%*********************************************************************%
+
+\appendix
+\include{chapters/appendix}
+
+%*********************************************************************%
+% LITERATURE                                                          %
+%*********************************************************************%
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\bibname} % 
+\bibliographystyle{alpha} % plain gerplain abbrvnat unsrtnat alphag alpha
+% in a thesis you have space... use full names
+\bibliography{literature/IEEEfull,literature/MYfull,literature/literature}
+% in a paper, space is limited. use abreviations
+%\bibliography{../literature/IEEEabrv,../literature/MYabrv,../literature/literature}
+
+%*********************************************************************%
+% ERKLÄRUNG                                                           %
+%*********************************************************************%
+
+\ifnotdraft{
+	\cleardoublepage
+	\phantomsection
+	\printindex
+	\include{tex/erklaerung}
+}
+
+\end{document}
