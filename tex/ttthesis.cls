@@ -1,6 +1,6 @@
 %% Class ttthesis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% This template is inspired by Roland Bless %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ProvidesClass{tex/ttthesis}[2010/10/26 Thomas Thüm - Template for Theses]
+\ProvidesClass{tex/ttthesis}[2010/10/26 Thomas ThÃ¼m - Template for Theses]
 \LoadClass[12pt,titlepage]{book}
 
 %% Options of this Class
@@ -20,8 +20,8 @@
 \newcommand{\iffinal}[2]{\ifx\@final\@undefined #2 \else #1 \fi}
 
 %% Package Declarations
-\usepackage[T1]{fontenc}      % T1-encoded fonts: auch Wörter mit Umlauten trennen
-\usepackage[latin1]{inputenc} % Eingabe nach ISO 8859-1
+\usepackage[T1]{fontenc}      % T1-encoded fonts: auch WÃ¶rter mit Umlauten trennen
+\usepackage[utf8]{inputenc} % Eingabe nach ISO 8859-1
 \usepackage[final]{graphicx}  % um Graphiken einzubinden
 \usepackage{makeidx}          % wir wollen auch einen Index
 \usepackage{fancyhdr}         % definiere einfache Headings
@@ -55,11 +55,11 @@
   \geometry{left=30mm,right=30mm,top=30mm,bottom=25mm,head=14.5pt}
 
 %% Paragraph Style
-\parindent 0cm                     % Absatzanfang wird nicht eingerückt
-\parskip1.5ex plus0.5ex minus0.5ex % Abstand zwischen zwei Absätzen
+\parindent 0cm                     % Absatzanfang wird nicht eingerÃ¼ckt
+\parskip1.5ex plus0.5ex minus0.5ex % Abstand zwischen zwei AbsÃ¤tzen
 
 %% Numbering of Sections
-\setcounter{secnumdepth}{3} % Numerierung auch für \subsubsection
+\setcounter{secnumdepth}{3} % Numerierung auch fÃ¼r \subsubsection
 \setcounter{tocdepth}{3}    % nimm auch \subsubsections ins Inhaltsverz. auf
 
 %% Schusterjungen und Hurenkinder verhindern: siehe deutsches TeX-FAQ (6.1.3)
@@ -116,7 +116,7 @@
 						 urlcolor=pdflinkcolor,
              plainpages=false,
              pdfpagelabels=true,
-						]{hyperref} % erzeuge Hyperlinks z.B. für pdflatex
+						]{hyperref} % erzeuge Hyperlinks z.B. fÃ¼r pdflatex
 \else
   \usepackage{nohyperref}
 \fi
@@ -194,7 +194,7 @@
 \newlength{\chapnolen}
 \newlength{\chapparlen}
 \newsavebox{\chapno}
-%% Kein ``Kapitel'' bei Kapitelüberschrift
+%% Kein ``Kapitel'' bei KapitelÃ¼berschrift
 % \renewcommand{\@chapapp}{} allein reicht nicht!
 %% \chapter{...}
 \renewcommand{\@makechapterhead}[1]{%
