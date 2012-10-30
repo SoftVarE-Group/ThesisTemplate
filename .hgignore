@@ -31,3 +31,7 @@ syntax: regexp
 \.toc$
 syntax: regexp
 \.tps$
+syntax: regexp
+\.acr$
+syntax: regexp
+\.alg$
