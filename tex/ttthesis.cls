@@ -43,12 +43,6 @@
   \usepackage[english]{babel}
 }
 
-%% Glossaries and Acronyms
-\usepackage[nonumberlist,acronym,toc]{glossaries} % list of acronyms
-  \renewcommand*{\glspostdescription}{} % remove the dot in the list of acronyms
-  \setlength{\glsdescwidth}{0.8\textwidth} % for longer acronym descriptions
-  \glossarystyle{super}
-
 %% Pagesize and Pageborder
 \usepackage{geometry}
   \ifgerman{\geometry{a4paper}}{\geometry{letterpaper}}
@@ -131,6 +125,12 @@
 % Das float-Paket muss NACH hyperref eingebunden werden,
 % sonst klappt die PDF-Ausgabe nicht:
 %\usepackage{float} %z.B. \floatstyle{ruled}
+
+%% Glossaries and Acronyms
+\usepackage[nonumberlist,acronym,toc]{glossaries} % list of acronyms
+  \renewcommand*{\glspostdescription}{} % remove the dot in the list of acronyms
+  \setlength{\glsdescwidth}{0.8\textwidth} % for longer acronym descriptions
+  \glossarystyle{super}
 
 %% Headings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
