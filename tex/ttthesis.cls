@@ -5,6 +5,7 @@
 
 %% Options of this Class
 \DeclareOption{draft}{\let\@draft\@empty}
+\DeclareOption{dbse}{\let\@dbse\@empty}
 \DeclareOption{german}{\let\@german\@empty}
 \DeclareOption{print}{\let\@print\@empty}
 \DeclareOption{final}{\let\@final\@empty}
@@ -16,6 +17,7 @@
 \newcommand{\ifnotdraftelse}[2]{\ifx\@draft\@undefined #1 \else #2 \fi}
 \newcommand{\ifdraft}[1]{\ifx\@draft\@undefined  \else #1 \fi}
 \newcommand{\ifgerman}[2]{\ifx\@german\@undefined #2 \else #1 \fi}
+\newcommand{\ifdbse}[2]{\ifx\@dbse\@undefined #2 \else #1 \fi}
 \newcommand{\ifprint}[2]{\ifx\@print\@undefined #2 \else #1 \fi}
 \newcommand{\iffinal}[2]{\ifx\@final\@undefined #2 \else #1 \fi}
 

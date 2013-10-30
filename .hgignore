@@ -35,3 +35,6 @@ syntax: regexp
 \.acr$
 syntax: regexp
 \.alg$
+syntax: glob
+thesis.log
+thesis.synctex.gz

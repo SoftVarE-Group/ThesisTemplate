@@ -9,13 +9,21 @@
    \hbox{}\hfill
     \begin{minipage}[t]{\textwidth}
       \begin{center}
-        \logo
+        \logo\ifdbse{\\[0.4cm]
+        \logodbse
+        }{ }
       \end{center}
     \end{minipage} 
    \hfill\hbox{}
   \end{figure}\ \\[0.4cm]
+  \ifdbse{
+  {\large \thesiskind \\[1cm]}
+  {\huge\bf \thetitle \\[1cm]}
+  }
+  {
   {\large \thesiskind \\[1.6cm]}
   {\huge\bf \thetitle \\[1.6cm]}
+  }
   { \ifgerman{Autor:}{Author:}}\\[0.4cm]
   {\huge \theauthor}\\[0.8cm]
   {\large\thedate, \theyear}\\[0.8cm]
