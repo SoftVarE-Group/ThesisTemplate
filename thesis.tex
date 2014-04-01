@@ -1,5 +1,5 @@
 \documentclass[
-dbse, % include logo of DBSE work group
+	dbse, 		 % include logo of DBSE working group
   %draft,    % omit title page, listings, and particular chapters selected below using include only
 	%german,   % titles for a thesis in German, A4 paper
 	%print,    % the printed version does not use colored links
@@ -40,14 +40,14 @@ dbse, % include logo of DBSE work group
 	\newcommand{\theforename}{\todo{Vorname}}
 	\newcommand{\thesurname}{\todo{Nachname}}
 	\newcommand{\thetitle}{\todo{Titel der Arbeit}}
-	\newcommand{\thedate}{\todo{13. Monat}}
+	\newcommand{\thedate}{\todo{13. Monat 2014}}
 }{
 	\newcommand{\theforename}{\todo{Forename}}
 	\newcommand{\thesurname}{\todo{Surname}}
 	\newcommand{\thetitle}{\todo{The Title of the Thesis}}
-	\newcommand{\thedate}{\todo{Month 13}}
+	\newcommand{\thedate}{\todo{Month 13, 2014}}
 }
-\newcommand{\theyear}{\todo{2013}}
+\newcommand{\theyear}{\todo{2014}}
 
 %*********************************************************************%
 % SETUP                                                               %
@@ -67,6 +67,13 @@ dbse, % include logo of DBSE work group
 %*********************************************************************%
 
 \begin{document}
+
+\ifgerman{
+	\labelformat{lstlisting}{Quelltext~#1}
+	\renewcommand{\lstlistingname}{Quelltext}
+}{
+	\labelformat{lstlisting}{Listing~#1}
+}
 
 % set the path where graphics are located
 \graphicspath{{pics/}}
@@ -89,7 +96,7 @@ dbse, % include logo of DBSE work group
 %*********************************************************************%
 
 % HOWTO: \gls{IDE} for singular or \glspl{IDE} for plural with 's
-\makeglossaries
+%\makeglossaries
 \newacronym{IDE}{IDE}{Integrated Development Environment}
 %\glsaddall % use only if you have acronyms that occur only in graphics
 
@@ -112,8 +119,8 @@ dbse, % include logo of DBSE work group
 		\lstlistoflistings
 		\addcontentsline{toc}{chapter}{Quelltextverzeichnis}
 
-		\renewcommand*{\firstacronymfont}[1]{\emph{#1}}
-		\printglossary[type=acronym,title=List of Acronyms,toctitle=Abkürzungsverzeichnis]
+		%\renewcommand*{\firstacronymfont}[1]{\emph{#1}}
+		%\printglossary[type=acronym,title=List of Acronyms,toctitle=Abkürzungsverzeichnis]
 	}{
 		\listoffigures
 		\addcontentsline{toc}{chapter}{List of Figures}
@@ -125,8 +132,8 @@ dbse, % include logo of DBSE work group
 		\lstlistoflistings
 		\addcontentsline{toc}{chapter}{List of Code Listings}
 
-		\renewcommand*{\firstacronymfont}[1]{\emph{#1}}
-		\printglossary[type=acronym,title=List of Acronyms,toctitle=List of Acronyms]
+		%\renewcommand*{\firstacronymfont}[1]{\emph{#1}}
+		%\printglossary[type=acronym,title=List of Acronyms,toctitle=List of Acronyms]
 	}
 }
 

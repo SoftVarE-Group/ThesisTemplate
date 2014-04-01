@@ -74,7 +74,6 @@
 	\labelformat{equation}{Formel~#1}
 	\labelformat{figure}{Abbildung~#1}
 	\labelformat{table}{Tabelle~#1}
-	\AtBeginDocument{\labelformat{lstlisting}{Quelltext~#1}}
 }{
 	\labelformat{page}{Page~#1}
 	\labelformat{chapter}{Chapter~#1}
@@ -84,7 +83,6 @@
 	\labelformat{equation}{Equation~#1}
 	\labelformat{figure}{Figure~#1}
 	\labelformat{table}{Table~#1}
-	\AtBeginDocument{\labelformat{lstlisting}{Listing~#1}}
 }
 
 %% PDF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
