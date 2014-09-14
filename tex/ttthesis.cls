@@ -27,7 +27,6 @@
 \usepackage[final]{graphicx}  % um Graphiken einzubinden
 \usepackage{makeidx}          % wir wollen auch einen Index
 \usepackage{fancyhdr}         % definiere einfache Headings
-\usepackage[numbers,sort&compress]{natbib}
 \usepackage{subfigure}
 \usepackage{xcolor}           % colored text
 \usepackage{booktabs}         % lines in tables: \toprule, \midrule, \bottomrule
@@ -43,6 +42,7 @@
 	\usepackage{bibgerm}        % German symbols in BibTeX
 }{
   \usepackage[english]{babel}
+	\usepackage[numbers,sort&compress]{natbib}
 }
 
 %% Pagesize and Pageborder
