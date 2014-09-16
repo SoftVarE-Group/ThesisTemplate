@@ -4,6 +4,10 @@
 	\usetikzlibrary{fadings,shapes.geometric}
 	\usetikzlibrary{decorations,scopes,calc,decorations.pathreplacing}
 
+\ifgerman{
+	\pgfplotsset{tick label style={/pgf/number format/1000 sep=.,/pgf/number format/use comma}}
+}
+
 % Tortendiagramme
 \newcommand{\slice}[4]{
   \pgfmathparse{0.5*#1+0.5*#2}
