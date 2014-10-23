@@ -1,5 +1,5 @@
 \documentclass[
-	dbse, 		 % include logo of DBSE working group
+	%dbse, 		 % include logo of DBSE working group
   %draft,    % omit title page, listings, and particular chapters selected below using include only
 	%german,   % titles for a thesis in German, A4 paper
 	%print,    % the printed version does not use colored links
@@ -116,8 +116,8 @@
 		\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
 
 		\renewcommand{\lstlistlistingname}{Quelltextverzeichnis}
+		\blankpage
 		\lstlistoflistings
-		\addcontentsline{toc}{chapter}{Quelltextverzeichnis}
 
 		%\renewcommand*{\firstacronymfont}[1]{\emph{#1}}
 		%\printglossary[type=acronym,title=List of Acronyms,toctitle=Abkürzungsverzeichnis]
@@ -129,8 +129,8 @@
 		\addcontentsline{toc}{chapter}{List of Tables}
 
 		\renewcommand{\lstlistlistingname}{List of Code Listings}
+		\blankpage
 		\lstlistoflistings
-		\addcontentsline{toc}{chapter}{List of Code Listings}
 
 		%\renewcommand*{\firstacronymfont}[1]{\emph{#1}}
 		%\printglossary[type=acronym,title=List of Acronyms,toctitle=List of Acronyms]
