@@ -105,7 +105,7 @@
 %*********************************************************************%
 
 \ifnotdraft{
-	{\parskip 0pt\tableofcontents} % toc bitte einzeilig
+	{\parskip 0pt \pdfbookmark{\contentsname}{\contentsname}\chapterheadfont \tableofcontents} % toc bitte einzeilig
 	\blankpage
 
 	\ifgerman{
@@ -118,6 +118,7 @@
 		\renewcommand{\lstlistlistingname}{Quelltextverzeichnis}
 		\blankpage
 		\lstlistoflistings
+		\addcontentsline{toc}{chapter}{\lstlistlistingname}
 
 		%\renewcommand*{\firstacronymfont}[1]{\emph{#1}}
 		%\printglossary[type=acronym,title=List of Acronyms,toctitle=Abkürzungsverzeichnis]
@@ -131,6 +132,7 @@
 		\renewcommand{\lstlistlistingname}{List of Code Listings}
 		\blankpage
 		\lstlistoflistings
+		\addcontentsline{toc}{chapter}{\lstlistlistingname}
 
 		%\renewcommand*{\firstacronymfont}[1]{\emph{#1}}
 		%\printglossary[type=acronym,title=List of Acronyms,toctitle=List of Acronyms]
