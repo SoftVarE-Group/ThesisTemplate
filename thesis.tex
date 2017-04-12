@@ -4,6 +4,7 @@
 	%german,   % titles for a thesis in German, A4 paper
 	%print,    % the printed version does not use colored links
 	%final,    % removes all TODOs
+	a4paper   % forces A4 format even if <german> is not selected (useful for printing)
 ]{tex/ttthesis}
 
 \input{tex/colorscheme}
@@ -14,15 +15,9 @@
 %*********************************************************************%
 % META                                                                %
 %*********************************************************************%
-\ifgerman{
-  \newcommand{\university}{Otto-von-Guericke-Universität Magdeburg}
-  \newcommand{\school}{Fakultät für Informatik}
-}{
-  \newcommand{\university}{University of Magdeburg}
-  \newcommand{\school}{School of Computer Science}
-}
-\newcommand{\logo}{\includegraphics[trim=0mm 0mm 50mm 0mm,clip,height=3cm]{INF_SIGN_druck}}
-\newcommand{\logodbse}{\includegraphics[scale=.45]{DBSE}}
+
+% available profiles: ovgu, tubs, tubs_isf
+\input{tex/profiles/tubs_isf}
 
 \newcommand{\advisorone}{Prof.\ \todo{Name}}
 \newcommand{\departmentone}{\ifgerman{Institut für}{Department of}\todots}
@@ -48,6 +43,8 @@
 	\newcommand{\thedate}{\todo{Month 13, 2014}}
 }
 \newcommand{\theyear}{\todo{2014}}
+% date for signature in erklaerung.tex (declaration of originality)
+\newcommand{\signaturedate}{\todo{42. Monat 2014}}
 
 %*********************************************************************%
 % SETUP                                                               %

@@ -9,6 +9,7 @@
 \DeclareOption{german}{\let\@german\@empty}
 \DeclareOption{print}{\let\@print\@empty}
 \DeclareOption{final}{\let\@final\@empty}
+\DeclareOption{a4paper}{\let\@afpaper\@empty}
 \newif\if@usepdf \@usepdffalse % not pdf ready
 \ProcessOptions
 
@@ -20,6 +21,7 @@
 \newcommand{\ifdbse}[2]{\ifx\@dbse\@undefined #2 \else #1 \fi}
 \newcommand{\ifprint}[2]{\ifx\@print\@undefined #2 \else #1 \fi}
 \newcommand{\iffinal}[2]{\ifx\@final\@undefined #2 \else #1 \fi}
+\newcommand{\ifafpaper}[2]{\ifx\@afpaper\@undefined #2 \else #1 \fi}
 
 %% Package Declarations
 \usepackage[T1]{fontenc}      % T1-encoded fonts: auch Wörter mit Umlauten trennen
@@ -47,7 +49,7 @@
 
 %% Pagesize and Pageborder
 \usepackage{geometry}
-  \ifgerman{\geometry{a4paper}}{\geometry{letterpaper}}
+  \ifgerman{\geometry{a4paper}}{\ifafpaper{\geometry{a4paper}}{\geometry{letterpaper}}}
   \geometry{left=30mm,right=30mm,top=30mm,bottom=25mm,head=14.5pt}
 
 %% Paragraph Style
