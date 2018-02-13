@@ -6,6 +6,11 @@
 	\newcommand{\todo}[1]{{\color{comment}\textit{[#1]}}}
 	\newcommand{\todots}{\todo{\ldots}}
 }
+\ifhints{
+	\newcommand{\hint}[1]{{\color{hint}\textit{#1}}}
+}{
+	\newcommand{\hint}[1]{}
+}
 
 % propositional formulas
 \newcommand{\pand}{\wedge}

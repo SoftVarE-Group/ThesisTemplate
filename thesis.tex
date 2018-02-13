@@ -1,10 +1,11 @@
 \documentclass[
-	%dbse, 		 % include logo of DBSE working group
-  %draft,    % omit title page, listings, and particular chapters selected below using include only
+	%dbse, 	   % include logo of DBSE working group
 	%german,   % titles for a thesis in German, A4 paper
+	a4paper,   % forces A4 format even if <german> is not selected (useful for printing)
+	hints,     % shows instructions on how to write the thesis
+	%draft,    % omit title page, listings, and particular chapters selected below using include only
 	%print,    % the printed version does not use colored links
 	%final,    % removes all TODOs
-	a4paper   % forces A4 format even if <german> is not selected (useful for printing)
 ]{tex/ttthesis}
 
 \input{tex/colorscheme}
@@ -146,10 +147,11 @@
 \include{chapters/introduction}
 \include{chapters/background}
 \include{chapters/example}
+\include{chapters/implementation}
 \include{chapters/evaluation}
 \include{chapters/relatedwork}
 \include{chapters/conclusion}
-\include{chapters/futurework}
+%\include{chapters/futurework}
 
 %*********************************************************************%
 % APPENDIX                                                            %

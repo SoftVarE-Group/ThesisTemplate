@@ -1,27 +1,29 @@
 %% Class ttthesis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% This template is inspired by Roland Bless %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ProvidesClass{tex/ttthesis}[2010/10/26 Thomas Thüm - Template for Theses]
+\ProvidesClass{tex/ttthesis}[2018/02/13 Thomas Thüm - Template for Theses]
 \LoadClass[12pt,titlepage]{book}
 
 %% Options of this Class
-\DeclareOption{draft}{\let\@draft\@empty}
 \DeclareOption{dbse}{\let\@dbse\@empty}
 \DeclareOption{german}{\let\@german\@empty}
+\DeclareOption{a4paper}{\let\@afpaper\@empty}
+\DeclareOption{hints}{\let\@hints\@empty}
+\DeclareOption{draft}{\let\@draft\@empty}
 \DeclareOption{print}{\let\@print\@empty}
 \DeclareOption{final}{\let\@final\@empty}
-\DeclareOption{a4paper}{\let\@afpaper\@empty}
 \newif\if@usepdf \@usepdffalse % not pdf ready
 \ProcessOptions
 
 %% New Commands for Options
+\newcommand{\ifdbse}[2]{\ifx\@dbse\@undefined #2 \else #1 \fi}
+\newcommand{\ifgerman}[2]{\ifx\@german\@undefined #2 \else #1 \fi}
+\newcommand{\ifafpaper}[2]{\ifx\@afpaper\@undefined #2 \else #1 \fi}
+\newcommand{\ifhints}[2]{\ifx\@hints\@undefined #2 \else #1 \fi}
 \newcommand{\ifnotdraft}[1]{\ifx\@draft\@undefined #1 \fi}
 \newcommand{\ifnotdraftelse}[2]{\ifx\@draft\@undefined #1 \else #2 \fi}
 \newcommand{\ifdraft}[1]{\ifx\@draft\@undefined  \else #1 \fi}
-\newcommand{\ifgerman}[2]{\ifx\@german\@undefined #2 \else #1 \fi}
-\newcommand{\ifdbse}[2]{\ifx\@dbse\@undefined #2 \else #1 \fi}
 \newcommand{\ifprint}[2]{\ifx\@print\@undefined #2 \else #1 \fi}
 \newcommand{\iffinal}[2]{\ifx\@final\@undefined #2 \else #1 \fi}
-\newcommand{\ifafpaper}[2]{\ifx\@afpaper\@undefined #2 \else #1 \fi}
 
 %% Package Declarations
 \usepackage[T1]{fontenc}      % T1-encoded fonts: auch Wörter mit Umlauten trennen
